@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import UserContext from "../../UserContext";
-import './SearchPanel.css'
+import './SearchPanel.scss'
 
 function SearchPanel() {
     const [filterWord, setFilterWord] = useState('')
@@ -16,9 +16,10 @@ function SearchPanel() {
     let userList = queryUserResult.map((user, index) => {
        /*  console.log(queryUserResult) */
         return (
-            <li key={index}>
+            <div key={index} className="user-name-container">
                 <span className="user-name" onClick={() => updateDisplayUser(user.index)}>{user.name}</span>
-            </li>
+                <div className="horizontal-line"></div>
+            </div>
         )
     })
 
@@ -27,10 +28,11 @@ function SearchPanel() {
     }, [userList])
 
     return (
-        <div>
+        <div className="search-panel-container">
             <div>
                 <form>
                     <input type="text"
+                           className="input-area"
                            id="search-bar"
                            onInput={(e) => {
                             setFilterWord(e.target.value)
@@ -40,9 +42,7 @@ function SearchPanel() {
                 </form>
             </div>
             <div>
-                <ul>
-                    {userList}
-                </ul>
+                {userList}
             </div>
         </div>
     )

@@ -1,0 +1,17 @@
+.search-panel-container {
+  font-size: 50px;
+  .input-area {
+    height: 40px;
+    font-size: 20px;
+  }
+  .user-name-container {
+    color: white;
+    &:hover {
+      background-color: #232323;
+      cursor: pointer;
+    }
+    .horizontal-line {
+      border-bottom: 2px solid #232323;
+    }
+  }
+}
