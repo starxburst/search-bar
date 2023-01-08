@@ -16,8 +16,8 @@ function SearchPanel() {
     let userList = queryUserResult.map((user, index) => {
        /*  console.log(queryUserResult) */
         return (
-            <div key={index} className="user-name-container">
-                <span className="user-name" onClick={() => updateDisplayUser(user.index)}>{user.name}</span>
+            <div key={index} className="user-name-container" onClick={() => updateDisplayUser(user.index)}>
+                <span className="user-name">{user.name}</span>
                 <div className="horizontal-line"></div>
             </div>
         )
